@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đề Thi Kết Thúc Học Phần - Lập Trình Web</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Lập Trình Web - MSSV: 221A011256</div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html" class="active">Trang Chủ</a></li>
+                    <li><a href="lythuyet.html" class="">a) Trả Lời Lý Thuyết</a></li>
+                    <li><a href="baitap23.html" class="">b) Bài Tập 23 (Đèn Kéo Quân)</a></li>
+                    <li><a href="baitap22.html" class="">c) Bài Tập 22</a></li>
+                    <li><a href="diemdanh.html" class="">d) Thông Tin Điểm Danh</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero card" style="text-align: center; background: linear-gradient(135deg, #2c3e50, #3498db); color: white;">
+            <h1>ĐỀ THI KẾT THÚC HỌC PHẦN "LẬP TRÌNH WEB" - ĐỀ SỐ 1</h1>
+            <p style="margin-top: 10px; font-size: 1.1rem;">Sinh viên thực hiện: <strong>Phạm Tấn Phát</strong> | MSSV: <strong>221A011256</strong> | Lớp: <strong>221A01043</strong></p>
+            <p>GVHD: <strong>Nguyễn Quang Tấn</strong></p>
+        </section>
+
+        <!-- Nhanh den cac bai tap -->
+        <section class="card">
+            <h2>Danh Sách Bài Tập & Link Trực Tiếp</h2>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li><strong>a) Trang Lý Thuyết:</strong> <a href="https://701-221A011256.netlify.app/lythuyet.html" target="_blank">https://701-221A011256.netlify.app/lythuyet.html</a></li>
+                <li><strong>b) Bài Tập 23 (Đèn Kéo Quân 3D):</strong> <a href="https://701-221A011256.netlify.app/baitap23.html" target="_blank">https://701-221A011256.netlify.app/baitap23.html</a></li>
+                <li><strong>c) Bài Tập 22 (Kết Quả Quizizz):</strong> <a href="https://701-221A011256.netlify.app/baitap22.html" target="_blank">https://701-221A011256.netlify.app/baitap22.html</a></li>
+                <li><strong>d) Thông Tin Điểm Danh:</strong> <a href="https://701-221A011256.netlify.app/diemdanh.html" target="_blank">https://701-221A011256.netlify.app/diemdanh.html</a></li>
+            </ul>
+        </section>
+
+        <!-- PHẦN 1: TÌM KIẾM SẢN PHẨM -->
+        <section class="card">
+            <h2>1. Danh Sách Sản Phẩm & Tìm Kiếm (20 điểm)</h2>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Nhập tên sản phẩm cần tìm (không phân biệt hoa thường)..." onkeyup="searchProducts()">
+            </div>
+            <div id="productContainer" class="product-grid"></div>
+            <p id="errorMsg" class="error-text" style="display: none;">Không tìm thấy sản phẩm phù hợp!</p>
+        </section>
+
+        <!-- PHẦN 2: FORM ĐĂNG KÝ & LOCALSTORAGE -->
+        <section class="card">
+            <h2>2. Đăng Ký Người Dùng & LocalStorage (20 điểm)</h2>
+            <form id="registerForm" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label>Họ và tên:</label>
+                    <input type="text" id="regName" required placeholder="Nhập họ và tên">
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="regEmail" required placeholder="example@domain.com">
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu (ít nhất 8 ký tự, gồm chữ hoa, chữ thường và số):</label>
+                    <input type="password" id="regPassword" required placeholder="••••••••">
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="termsCheck" required>
+                    <label for="termsCheck">Tôi đồng ý với các điều khoản sử dụng</label>
+                </div>
+                <button type="submit" class="btn">Đăng Ký Nhanh</button>
+                <p id="regSuccess" class="success-text" style="display: none;"></p>
+                <p id="regError" class="error-text" style="display: none;"></p>
+            </form>
+        </section>
+
+        <!-- PHẦN 3: ĐỒNG HỒ ĐẾM NGƯỢC -->
+        <section class="card text-center" style="text-align: center;">
+            <h2>3. Đồng Hồ Đếm Ngược 10 Phút (20 điểm)</h2>
+            <div id="countdownTimer" class="timer-display">10:00</div>
+            <button onclick="startCountdown()" class="btn">Bắt Đầu Đếm Ngược</button>
+        </section>
+    </main>
+
+    <!-- Modal Alert khi hết giờ -->
+    <div id="timeOutModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>THÔNG BÁO</h3>
+            <p>Đã hết thời gian làm bài đếm ngược (10 phút)!</p>
+            <button onclick="closeModal()" class="btn">Đóng Thông Báo</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Môn Lập Trình Web | Phạm Tấn Phát - MSSV: 221A011256</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
