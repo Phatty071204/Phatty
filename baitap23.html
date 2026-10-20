@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập 23 - Đèn Kéo Quân 3D</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .carousel-stage {
+            perspective: 1000px;
+            width: 100%;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+
+        .lantern-spinner {
+            width: 180px;
+            height: 220px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateLantern 12s infinite linear;
+            cursor: pointer;
+        }
+
+        .lantern-spinner:hover {
+            animation-play-state: paused;
+        }
+
+        .lantern-face {
+            position: absolute;
+            width: 180px;
+            height: 220px;
+            left: 0;
+            top: 0;
+            border: 3px solid #e74c3c;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lantern-face img {
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+        }
+
+        .lantern-face span {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 5px;
+        }
+
+        .face1 { transform: rotateY(0deg) translateZ(160px); }
+        .face2 { transform: rotateY(60deg) translateZ(160px); }
+        .face3 { transform: rotateY(120deg) translateZ(160px); }
+        .face4 { transform: rotateY(180deg) translateZ(160px); }
+        .face5 { transform: rotateY(240deg) translateZ(160px); }
+        .face6 { transform: rotateY(300deg) translateZ(160px); }
+
+        @keyframes rotateLantern {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Lập Trình Web - MSSV: 221A011256</div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html" class="">Trang Chủ</a></li>
+                    <li><a href="lythuyet.html" class="">a) Trả Lời Lý Thuyết</a></li>
+                    <li><a href="baitap23.html" class="active">b) Bài Tập 23 (Đèn Kéo Quân)</a></li>
+                    <li><a href="baitap22.html" class="">c) Bài Tập 22</a></li>
+                    <li><a href="diemdanh.html" class="">d) Thông Tin Điểm Danh</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h1>Bài Tập 23: Hiệu Ứng Đèn Kéo Quân 3D</h1>
+            <p style="text-align: center; font-style: italic; color: #7f8c8d;">Rê chuột vào ảnh để dừng xoay | Rê chuột ra ngoài để đèn tiếp tục quay vòng tròn</p>
+            
+            <div class="carousel-stage">
+                <div class="lantern-spinner" id="lantern">
+                    <div class="lantern-face face1">
+                        <img src="images/avatar.jpg" alt="Mặt 1" onerror="this.src='https://via.placeholder.com/180x180?text=PhamTanPhat_1'">
+                        <span>Mặt 1 - Phạm Tấn Phát</span>
+                    </div>
+                    <div class="lantern-face face2">
+                        <img src="images/avatar.jpg" alt="Mặt 2" onerror="this.src='https://via.placeholder.com/180x180?text=PhamTanPhat_2'">
+                        <span>Mặt 2 - 221A011256</span>
+                    </div>
+                    <div class="lantern-face face3">
+                        <img src="images/avatar.jpg" alt="Mặt 3" onerror="this.src='https://via.placeholder.com/180x180?text=PhamTanPhat_3'">
+                        <span>Mặt 3 - Lớp 221A01043</span>
+                    </div>
+                    <div class="lantern-face face4">
+                        <img src="images/avatar.jpg" alt="Mặt 4" onerror="this.src='https://via.placeholder.com/180x180?text=PhamTanPhat_4'">
+                        <span>Mặt 4 - Lập Trình Web</span>
+                    </div>
+                    <div class="lantern-face face5">
+                        <img src="images/avatar.jpg" alt="Mặt 5" onerror="this.src='https://via.placeholder.com/180x180?text=PhamTanPhat_5'">
+                        <span>Mặt 5 - GV: Nguyễn Quang Tấn</span>
+                    </div>
+                    <div class="lantern-face face6">
+                        <img src="images/avatar.jpg" alt="Mặt 6" onerror="this.src='https://via.placeholder.com/180x180?text=PhamTanPhat_6'">
+                        <span>Mặt 6 - Bài Tập 23</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="submission-info" style="margin-top: 30px; padding: 15px; background: #eef8ff; border-left: 4px solid #3498db; border-radius: 4px;">
+                <h3>Thông Tin Đường Dẫn Nộp Bài:</h3>
+                <p><strong>Link trực tiếp Bài 23:</strong> <a href="https://701-221A011256.netlify.app/baitap23.html" target="_blank">https://701-221A011256.netlify.app/baitap23.html</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Môn Lập Trình Web | Phạm Tấn Phát - MSSV: 221A011256</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phần Lý Thuyết - Đề Thi Lập Trình Web</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Lập Trình Web - MSSV: 221A011256</div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html" class="">Trang Chủ</a></li>
+                    <li><a href="lythuyet.html" class="active">a) Trả Lời Lý Thuyết</a></li>
+                    <li><a href="baitap23.html" class="">b) Bài Tập 23 (Đèn Kéo Quân)</a></li>
+                    <li><a href="baitap22.html" class="">c) Bài Tập 22</a></li>
+                    <li><a href="diemdanh.html" class="">d) Thông Tin Điểm Danh</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h1>Phần Lý Thuyết (40 điểm)</h1>
+            <p style="margin-bottom: 20px; font-style: italic; color: #555;">Link trực tiếp trang lý thuyết: <a href="https://701-221A011256.netlify.app/lythuyet.html" target="_blank">https://701-221A011256.netlify.app/lythuyet.html</a></p>
+
+            <div class="theory-item" style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px dashed #ccc;">
+                <h3>1. Sự khác biệt giữa position: absolute và position: relative (10 điểm)</h3>
+                <p><strong>- Relative:</strong> Phần tử giữ nguyên vị trí ban đầu trong luồng tài liệu (in-flow), dịch chuyển tương đối dựa trên vị trí gốc của nó khi dùng các thuộc tính top, left, right, bottom.</p>
+                <p><strong>- Absolute:</strong> Phần tử bị loại bỏ hoàn toàn khỏi luồng tài liệu, định vị tuyệt đối so với phần tử cha gần nhất có vị trí tương đối/tuyệt đối (position khác static).</p>
+                <p><strong>- Ảnh hưởng deploy & responsive:</strong> Việc lạm dụng position: absolute với px cố định dễ gây vỡ vạch/chồng chéo giao diện trên di động. Cần kết hợp Media Queries, Flexbox/Grid để tối ưu tương thích nhiều thiết bị.</p>
+            </div>
+
+            <div class="theory-item" style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px dashed #ccc;">
+                <h3>2. Quy trình đăng ký Domain, Hosting & Vai trò DNS (10 điểm)</h3>
+                <p><strong>- Quy trình:</strong> Mua tên miền từ Registrar, cấu hình Hosting (hoặc dùng dịch vụ Serverless/Static như GitHub Pages, Netlify), sau đó trỏ bản ghi DNS từ tên miền về IP server/CNAME hosting.</p>
+                <p><strong>- Vai trò DNS:</strong> Giúp phân giải tên miền dạng chữ dễ nhớ (như example.com) sang địa chỉ IP dạng số của máy chủ web.</p>
+                <p><strong>- Rủi ro bảo mật:</strong> Thiếu chứng chỉ SSL/HTTPS làm lộ thông tin truyền nhận, hoặc sai sót cấu hình DNS làm trang web bị tấn công DNS Spoofing/Subdomain Takeover.</p>
+            </div>
+
+            <div class="theory-item" style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px dashed #ccc;">
+                <h3>3. So sánh let, const và var trong JavaScript (10 điểm)</h3>
+                <p><strong>- var:</strong> Function scope, bị hoisting (khai báo được kéo lên đầu và gán giá trị undefined), dễ gây ghi đè biến không mong muốn.</p>
+                <p><strong>- let & const:</strong> Block scope (trong cặp {}). const dùng cho hằng số không thể gán lại giá trị. Cả hai đều nằm trong Temporal Dead Zone trước khi khai báo.</p>
+                <p><strong>- Debug:</strong> Dùng Chrome DevTools (tab Console/Sources), đặt breakpoint để kiểm tra giá trị biến từng dòng lệnh.</p>
+            </div>
+
+            <div class="theory-item">
+                <h3>4. Khái niệm Event Delegation trong JavaScript (10 điểm)</h3>
+                <p><strong>- Khái niệm:</strong> Lợi dụng cơ chế nổi bọt sự kiện (Event Bubbling) bằng cách lắng nghe sự kiện ở thẻ cha thay vì từng thẻ con.</p>
+                <p><strong>- Lợi ích:</strong> Giúp tiết kiệm bộ nhớ, xử lý mượt mà danh sách phần tử động được tạo ra sau mà không cần addEventListener lại.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Môn Lập Trình Web | Phạm Tấn Phát - MSSV: 221A011256</p>
+    </footer>
+</body>
+</html>
